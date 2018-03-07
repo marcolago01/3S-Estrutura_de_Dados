@@ -19,11 +19,11 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{DE5FA1AD-D9DD-4808-95C9-842EEAEB7451}</ProjectGuid>
+    <ProjectGuid>{3DD7615E-B0D8-4899-ABCD-DEBE85837A6A}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>ListaEstatica</RootNamespace>
+    <RootNamespace>ListaGenerica</RootNamespace>
     <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
-    <ProjectName>ListaEstatica - Especifica</ProjectName>
+    <ProjectName>ListaEstatica - Generica</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -146,12 +146,13 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="listaEstatica.h" />
+    <ClInclude Include="ListaEstatica.h" />
+    <ClInclude Include="lista_estatica_gen.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="ListaEstatica.cpp" />
+    <ClCompile Include="ListaGenerica.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
