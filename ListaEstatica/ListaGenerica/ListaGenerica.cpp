@@ -35,6 +35,7 @@ int main()
 
 	imprimirCartas(cartas);
 
+	
     return 0;
 }
 
