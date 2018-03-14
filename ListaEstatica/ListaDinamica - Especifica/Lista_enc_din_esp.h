@@ -3,6 +3,7 @@
 #define LISTA_ENC_DIN_ESP_H
 
 #include <string>
+#include <iostream>
 using namespace std;
 
 struct TMusica
@@ -88,6 +89,36 @@ bool removerInicioLEnc(TLista &l) {
 
 	l.qtd--;
 	return true;
+}
+
+bool removeFimLEnc(TLista &l) {
+	if (l.qtd == 1) {
+		return removerInicioLEnc(l);
+	}
+	if (l.qtd == 0) {
+		return false;
+	}
+	TElemento * nav;
+	nav = l.inicio;
+
+	while (nav->proximo->proximo != NULL) {
+		nav = nav->proximo;
+	}
+
+	delete nav->proximo;
+	nav->proximo = NULL;
+	l.qtd--;
+	return true;
+}
+
+void imprimirMusicasLEnc(TLista &l) {
+	TElemento * nav = l.inicio;
+
+	while (nav != NULL)
+	{
+		cout << nav->m.titulo << "\t" << nav->m.artista << endl;
+		nav = nav->proximo;
+	}
 }
 
 
