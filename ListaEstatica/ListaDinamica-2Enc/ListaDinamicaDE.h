@@ -83,4 +83,46 @@ bool inserirFimLDE(TListaDE &l, TMusica m) {
 	
 }
 
+bool removeInicioLDE(TListaDE &l) {
+	if (l.qtd == 0) {
+		return false;
+	}
+
+	TElementoDE * save = new TElementoDE;
+
+	save = l.inicio;
+	l.inicio = l.inicio->prox;
+	delete save;
+	if (l.qtd > 1) {
+		l.inicio->ant = NULL;
+	}
+	else
+	{
+		l.fim = NULL;
+	}
+	
+	l.qtd--;
+	return true;
+}
+
+bool removeFimLDE(TListaDE &l) {
+	if (l.qtd == 0) {
+		return false;
+	}
+
+	if (l.qtd == 1) {
+		return removeInicioLDE(l);
+	}
+
+	TElementoDE * save = new TElementoDE;
+	save = l.fim;
+	l.fim->ant->prox = NULL;
+	l.fim = l.fim->ant;
+	l.qtd--;
+
+	delete save;
+
+	return true;
+}
+
 #endif
