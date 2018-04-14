@@ -2,10 +2,14 @@
 //
 
 #include "stdafx.h"
+#include "PILHA.h"
+using namespace std;
+
 
 
 int main()
 {
-    return 0;
+	setlocale(LC_ALL, "Portuguese");
+	verificarExpressao();
 }
 
