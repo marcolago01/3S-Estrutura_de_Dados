@@ -44,14 +44,14 @@ bool enfileirar(Fila<T> &fila, T dado) {
 }
 
 template<typename T>
-bool desenfileirar(Fila<T> &fila, T dado) {
+bool desenfileirar(Fila<T> &fila) {
 	if (fila.qtd == 0) {
 		return false;
 	}
 	ElementoF<T> *apagar;
 	apagar = fila.inicio;
 	fila.inicio = fila.inicio->prox;
-	if (fila == 1) {
+	if (fila.qtd == 1) {
 		fila.ultimo = fila.ultimo->prox;
 	}
 
