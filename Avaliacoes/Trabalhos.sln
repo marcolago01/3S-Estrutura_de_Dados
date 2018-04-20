@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TrabalhoListas", "TrabalhoListas\TrabalhoListas.vcxproj", "{12D189BF-BDD8-4EDC-96CF-C417B32E7A45}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TrabalhoListas", "M1_Trabalho\TrabalhoListas\TrabalhoListas.vcxproj", "{12D189BF-BDD8-4EDC-96CF-C417B32E7A45}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Simulacao_Supermercado", "..\M2_TrabalhoOpcional-Fila\Simulacao_Supermercado\Simulacao_Supermercado.vcxproj", "{EA9AF7B9-A78D-4CD0-8824-6D57D840CE72}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Simulacao_Supermercado", "M2_TrabalhoOpcional-Fila\Simulacao_Supermercado\Simulacao_Supermercado.vcxproj", "{EA9AF7B9-A78D-4CD0-8824-6D57D840CE72}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
