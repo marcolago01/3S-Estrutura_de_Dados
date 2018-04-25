@@ -70,5 +70,33 @@ bool inserirABB_it(ABB &arvore, int chave, string dado) {
 	return true;
 }
 
+bool inserirABBRec(NodoABB *&nodo, int chave, string dado) {
+	
+	if (nodo == NULL) {
+		nodo = new NodoABB;
+		nodo->dado = dado;
+		nodo->chave = chave;
+		nodo->menor = NULL;
+		nodo->maior = NULL;
+		return true;
+	}
+	else {
+		if (chave == nodo->chave) {
+			return false;
+		}
+		else
+		{
+			if (chave > nodo->chave) {
+				return inserirABBRec(nodo->maior, chave, dado);
+			}
+			else {
+				return inserirABBRec(nodo->menor, chave, dado);
+			}
+		}
+	}
+}
+
+
+
 #endif // !ARVOREBINARIA_H
 
