@@ -3,6 +3,7 @@
 #define ARVOREBINARIA_H
 
 #include <string>
+#include <iostream>
 using namespace std;
 
 struct NodoABB
@@ -96,7 +97,49 @@ bool inserirABBRec(NodoABB *&nodo, int chave, string dado) {
 	}
 }
 
+void inFixa(NodoABB *&nodo) {
 
+	if (nodo != NULL) {
+		inFixa(nodo->menor);
+		cout << nodo->chave << ", ";
+		inFixa(nodo->maior);
+	}
+}
+
+string busca(NodoABB *nodo, int chave) {
+	if (nodo == NULL) {
+		return "nao encontrado";
+	}
+	if (nodo->chave == chave) {
+		return nodo->dado;
+	}
+	else {
+		if (chave < nodo->chave) {
+			return busca(nodo->menor,chave);
+		}
+		else {
+			return busca(nodo->maior,chave);
+		}
+	}
+	
+}
+
+int buscaChave(NodoABB *nodo, string dado) {
+	if (nodo != NULL) {
+		if (nodo->dado == dado) {
+			return nodo->chave;
+		}
+		
+		int res = buscaChave(nodo->menor, dado);
+		if (res == NULL) {
+			return buscaChave(nodo->maior, dado);
+		}
+		else {
+			return res;
+		}
+	}
+	return NULL;
+}
 
 #endif // !ARVOREBINARIA_H
 
