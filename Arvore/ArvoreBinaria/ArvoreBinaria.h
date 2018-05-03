@@ -124,15 +124,15 @@ string busca(NodoABB *nodo, int chave) {
 	
 }
 
-int buscaChave(NodoABB *nodo, string dado) {
+int busca(NodoABB *nodo, string dado) {
 	if (nodo != NULL) {
 		if (nodo->dado == dado) {
 			return nodo->chave;
 		}
 		
-		int res = buscaChave(nodo->menor, dado);
+		int res = busca(nodo->menor, dado);
 		if (res == NULL) {
-			return buscaChave(nodo->maior, dado);
+			return busca(nodo->maior, dado);
 		}
 		else {
 			return res;

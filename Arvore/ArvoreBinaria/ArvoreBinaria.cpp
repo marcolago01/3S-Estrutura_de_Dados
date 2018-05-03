@@ -20,7 +20,7 @@ int main()
 	inserirABB_it(teste, 80, "setimo");
 	inserirABB_it(teste, 29, "oitavo");
 	inserirABB_it(teste, 85, "nono");
-	int valor = buscaChave(teste.raiz, "sexto");
+	int valor = busca(teste.raiz, "sexto");
 	cout << valor;
 	system("pause");
 }
