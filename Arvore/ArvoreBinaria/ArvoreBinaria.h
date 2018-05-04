@@ -141,5 +141,49 @@ int busca(NodoABB *nodo, string dado) {
 	return NULL;
 }
 
+bool encontrarRemoverNodo(NodoABB *nodo, int chave) {
+	if (nodo == NULL) {
+		return false;
+	}
+	if (nodo->chave == chave) {
+		removeNodo(nodo);
+		return true;
+	}
+	else {
+		if (chave < nodo->chave) {
+			return encontrarRemoverNodo(nodo->menor, chave);
+		}
+		else {
+			return encontrarRemoverNodo(nodo->maior, chave);
+		}
+	}
+}
+
+void removeNodo(NodoABB *&nodo) {
+
+	NodoABB *mm = nodo->menor;
+	NodoABB *pai = NULL;
+
+	if (mm == NULL) {
+		NodoABB * rem = nodo;
+		nodo = nodo->maior;
+		delete rem;
+		return;
+	}
+
+	while (nodo->maior != NULL) {
+		pai = mm;
+		mm = mm->maior;
+	}
+
+	mm->maior = nodo->maior;
+	if (pai != NULL) {
+		pai->maior = mm->menor;
+		mm->menor = nodo->menor;
+	}
+	delete nodo;
+	nodo = mm;
+}
+
 #endif // !ARVOREBINARIA_H
 
