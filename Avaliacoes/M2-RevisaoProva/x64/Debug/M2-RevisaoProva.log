@@ -1,0 +1,5 @@
+﻿  stdafx.cpp
+  M2-RevisaoProva.cpp
+c:\users\5586658\source\repos\3s-estrutura_de_dados\avaliacoes\m2-revisaoprova\m2-revisaoprova.cpp(16): warning C4101: 'teste': variável local não referenciada
+c:\users\5586658\source\repos\3s-estrutura_de_dados\avaliacoes\m2-revisaoprova\m2-revisaoprova.cpp(26): warning C4267: 'inicializando': conversão de 'size_t' para 'int', possível perda de dados
+  M2-RevisaoProva.vcxproj -> C:\Users\5586658\Source\Repos\3S-Estrutura_de_Dados\Avaliacoes\x64\Debug\M2-RevisaoProva.exe
