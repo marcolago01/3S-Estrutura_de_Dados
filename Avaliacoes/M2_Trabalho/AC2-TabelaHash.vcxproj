@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -20,11 +20,11 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
-    <ProjectGuid>{EA9AF7B9-A78D-4CD0-8824-6D57D840CE72}</ProjectGuid>
+    <ProjectGuid>{46F15E49-58C8-456C-AB10-34EBE4C765ED}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>SimulacaoSupermercado</RootNamespace>
+    <RootNamespace>AC2TabelaHash</RootNamespace>
     <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
-    <ProjectName>M2-Simulacao_Supermercado</ProjectName>
+    <ProjectName>M2-AC2_TabelaHash</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -148,13 +148,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="Cliente.h" />
-    <ClInclude Include="Fila.h" />
+    <ClInclude Include="ListaEnc.h" />
     <ClInclude Include="stdafx.h" />
+    <ClInclude Include="TabelaHash-Aberto.h" />
+    <ClInclude Include="TabHash-Enc.h" />
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Simulacao_Supermercado.cpp" />
+    <ClCompile Include="AC2-TabelaHash.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
