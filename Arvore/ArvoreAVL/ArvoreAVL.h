@@ -39,7 +39,15 @@ int inserirAVL(NodoAVL *& nodo, int chave, string dado) {
 	return 1;
 }
 
-void dirdir(NodoAVL *a,NodoAVL *b, NodoAVL *c);
+void dirdir(NodoAVL *a, NodoAVL *b, NodoAVL *c) {
+	a->maior = b->menor;
+	b->menor = a;
+	
+	b->bal = 0;
+	b->bal = 0;
+	
+	a = b;
+}
 void diresq(NodoAVL *a, NodoAVL *b, NodoAVL *c);
 void esqesq(NodoAVL *a, NodoAVL *b, NodoAVL *c);
 void esqdir(NodoAVL *a, NodoAVL *b, NodoAVL *c);
