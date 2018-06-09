@@ -1,0 +1,4 @@
+﻿  M3-HeapBinario.cpp
+c:\users\5586658\source\repos\3s-estrutura_de_dados\trabalhos\m3-heapbinario\m3-heapbinario.cpp(14): warning C4244: 'argumento': conversão de 'time_t' para 'unsigned int', possível perda de dados
+c:\users\5586658\source\repos\3s-estrutura_de_dados\trabalhos\m3-heapbinario\m3-heapbinario.cpp(18): warning C4101: 'chave': variável local não referenciada
+  M3-HeapBinario.vcxproj -> C:\Users\5586658\Source\Repos\3S-Estrutura_de_Dados\Trabalhos\x64\Debug\M3-HeapBinario.exe
