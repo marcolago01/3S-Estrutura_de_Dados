@@ -1,0 +1,3 @@
+﻿  stdafx.cpp
+  ArvoreBinaria.cpp
+c:\users\5586658\source\repos\3s-estrutura_de_dados\arvore\arvorebinaria\arvorebinaria.h(149): error C3861: 'removeNodo': identificador não encontrado
