@@ -1,0 +1,5 @@
+﻿  ArvoreDeExpressao.cpp
+c:\users\5586658\source\repos\3s-estrutura_de_dados\arvore\arvoredeexpressao\arvoreexpressao.h(51): warning C4267: 'inicializando': conversão de 'size_t' para 'int', possível perda de dados
+c:\users\5586658\source\repos\3s-estrutura_de_dados\arvore\arvoredeexpressao\arvoreexpressao.h(73): warning C4267: '=': conversão de 'size_t' para 'int', possível perda de dados
+c:\users\5586658\source\repos\3s-estrutura_de_dados\arvore\arvoredeexpressao\arvoreexpressao.h(127): warning C4715: 'executarAExp': nem todos os caminhos de controle retornam um valor
+  ArvoreDeExpressao.vcxproj -> C:\Users\5586658\source\repos\3S-Estrutura_de_Dados\Arvore\x64\Debug\ArvoreDeExpressao.exe
