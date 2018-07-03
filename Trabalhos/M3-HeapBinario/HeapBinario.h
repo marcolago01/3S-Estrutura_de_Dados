@@ -3,37 +3,47 @@
 #define HEAPBINARIO_H
 
 #include <algorithm>
+#include <string>
 using namespace std;
+
+struct Dado
+{
+	int chave;
+	string dado;
+};
 
 struct HB
 {
-	int heap[1000];
+	Dado heap[1000];
 	int qtd;
 };
 
 void inicializarHB(HB &hb) {
 	for (int i = 0; i < 1000; i++)
 	{
-		hb.heap[i] = NULL;
+		hb.heap[i].chave = NULL;
 	}
 	hb.qtd = 0;
 }
 
-bool verificarMenorHm(int heap[], int qtd, int pos) {
-	if (heap[pos] == NULL) {
+bool verificarMenorHm(Dado heap[], int qtd, int pos) {
+	if (heap[pos].chave == NULL) {
 		return false;
 	}
 
 	int pai = (pos - 1) / 2;
-	return heap[pos] < heap[pai];
+	return heap[pos].chave < heap[pai].chave;
 }
 
-void trocarHm(int heap[], int pos) {
+void trocarHm(Dado heap[], int pos) {
 	int pai = (pos - 1) / 2;
 	swap(heap[pos], heap[pai]);
 }
 
-void inserirHm(HB &hb,int chave) {
+void inserirHm(HB &hb,Dado chave) {
+	if (hb.qtd == 1000) {
+		return;
+	}
 	hb.heap[hb.qtd] = chave;
 	hb.qtd++;
 
@@ -59,6 +69,22 @@ void removerHm(HB &hb,bool remover,int pos=0) {
 	else if (verificarMenorHm(hb.heap, hb.qtd, filhoDir)) {
 		trocarHm(hb.heap, filhoDir);
 		return removerHm(hb, false, filhoDir);
+	}
+}
+
+void atualizarPeloDado(HB &hb, Dado valor) {
+	if (hb.qtd == 0) {
+		return;
+	}
+
+	for (int i = 0; i < 1000; i++)
+	{
+		if (hb.heap[i].dado == valor.dado) {
+			hb.heap[i].chave == valor.chave;
+		}
+		if (hb.heap[i].chave == NULL) {
+			i = 1000;
+		}
 	}
 }
 
