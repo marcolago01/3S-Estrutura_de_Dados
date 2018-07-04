@@ -60,32 +60,43 @@ void montarAExp(AExpNodo *&nodo) {
 		for (int i = 0; i < tamanhoExpressao; i++)
 		{
 			if (nodo->expressao[i] == '(') {
-				while (nodo->expressao[i] != ')') {
-					i++;
-				}
 				parenteses++;
 			}
 		}
-		if ((nodo->expressao[0] == '(' && nodo->expressao[tamanhoExpressao - 1] == ')') 
+
+		if ((nodo->expressao[0] == '(' && nodo->expressao[tamanhoExpressao - 1] == ')')
 			&& parenteses == 1) {
 
 			nodo->expressao = nodo->expressao.substr(1, tamanhoExpressao - 2);
 			tamanhoExpressao = nodo->expressao.length();
 		}
 
+
 		int menorPrioridade = -1;
 		int indiceMenorPrioridade = 0;
 		int prioridadeAtual = -1;
 		char caracterAtual;
+		parenteses = 0;
 
 		for (int i = 0; i < tamanhoExpressao; i++) {
 			caracterAtual = nodo->expressao[i];
 
 			if (caracterAtual == '(') {
-				while (nodo->expressao[i] != ')') {
+				parenteses++;
+				i++;
+				while (parenteses != 0) {
+					if (nodo->expressao[i] == '(') {
+						parenteses++;
+					}
+					if (nodo->expressao[i] == ')') {
+						parenteses--;
+					}
 					i++;
 				}
 				caracterAtual = nodo->expressao[i];
+				if (caracterAtual == NULL) {
+					caracterAtual = '1';
+				}
 			}
 
 			prioridadeAtual = definirPrioridade(caracterAtual);			
