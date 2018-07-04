@@ -1,4 +1,4 @@
 ﻿  M3-HeapBinario.cpp
-c:\users\marco.lago\source\repos\3s-estrutura_de_dados\trabalhos\m3-heapbinario\heapbinario.h(87): warning C4553: '==': operador não tem efeito; você pretendia usar '='?
-c:\users\marco.lago\source\repos\3s-estrutura_de_dados\trabalhos\m3-heapbinario\m3-heapbinario.cpp(14): warning C4244: 'argumento': conversão de 'time_t' para 'unsigned int', possível perda de dados
-  M3-HeapBinario.vcxproj -> C:\Users\marco.lago\Source\Repos\3S-Estrutura_de_Dados\Trabalhos\x64\Debug\M3-HeapBinario.exe
+c:\users\5586658\source\repos\3s-estrutura_de_dados\trabalhos\m3-heapbinario\heapbinario.h(110): warning C4553: '==': operador não tem efeito; você pretendia usar '='?
+c:\users\5586658\source\repos\3s-estrutura_de_dados\trabalhos\m3-heapbinario\m3-heapbinario.cpp(14): warning C4244: 'argumento': conversão de 'time_t' para 'unsigned int', possível perda de dados
+  M3-HeapBinario.vcxproj -> C:\Users\5586658\Source\Repos\3S-Estrutura_de_Dados\Trabalhos\x64\Debug\M3-HeapBinario.exe

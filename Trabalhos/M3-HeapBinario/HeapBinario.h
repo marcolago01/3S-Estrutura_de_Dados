@@ -26,7 +26,7 @@ void inicializarHB(HB &hb) {
 	hb.qtd = 0;
 }
 
-bool verificarMenorHm(Dado heap[], int qtd, int pos) {
+bool verificarMenorHm(Dado heap[], int pos) {
 	if (heap[pos].chave == NULL) {
 		return false;
 	}
@@ -35,9 +35,29 @@ bool verificarMenorHm(Dado heap[], int qtd, int pos) {
 	return heap[pos].chave < heap[pai].chave;
 }
 
-void trocarHm(Dado heap[], int pos) {
+bool verificarMaiorHm(Dado heap[], int pos) {
+	if (heap[pos].chave == NULL) {
+		return false;
+	}
+
+	int filhoEsq = (2 * pos) + 1;
+	int filhoDir = (2 * pos) + 2;
+	if (heap[filhoEsq].chave == NULL) {
+		return false;
+	}
+	if (heap[filhoDir].chave == NULL) {
+		return false;
+	}
+	return heap[pos].chave > heap[filhoEsq].chave || heap[pos].chave > heap[filhoDir].chave;
+}
+
+void trocarHmMenor(Dado heap[], int pos) {
 	int pai = (pos - 1) / 2;
 	swap(heap[pos], heap[pai]);
+}
+
+void trocarHmMaior(Dado heap[], int pos,int filho) {
+	swap(heap[pos], heap[filho]);
 }
 
 void inserirHm(HB &hb,Dado chave) {
@@ -47,11 +67,18 @@ void inserirHm(HB &hb,Dado chave) {
 	hb.heap[hb.qtd] = chave;
 	hb.qtd++;
 
-	for (int i = hb.qtd-1; i > 0; i--)
+	int i = hb.qtd - 1;
+	while(i > 0)
 	{
-		if (verificarMenorHm(hb.heap, hb.qtd, i)) {
-			trocarHm(hb.heap, i);
+		if (verificarMenorHm(hb.heap, i)) {
+			trocarHmMenor(hb.heap, i);
+			int pai = (i - 1) / 2;
+			i = pai;
 		}
+		else {
+			i--;
+		}
+
 	}
 }
 
@@ -59,15 +86,15 @@ void removerHm(HB &hb,bool remover,int pos=0) {
 	int filhoEsq = (2 * pos) + 1;
 	int filhoDir = (2 * pos) + 2;
 	if (remover) {
-		hb.heap[0] = hb.heap[hb.qtd - 1];
+		hb.heap[pos] = hb.heap[hb.qtd - 1];
 		hb.qtd--;
 	}
-	if (verificarMenorHm(hb.heap, hb.qtd, filhoEsq)) {
-		trocarHm(hb.heap, filhoEsq);
+	if (verificarMenorHm(hb.heap, filhoEsq)) {
+		trocarHmMenor(hb.heap, filhoEsq);
 		return removerHm(hb, false, filhoEsq);
 	}
-	else if (verificarMenorHm(hb.heap, hb.qtd, filhoDir)) {
-		trocarHm(hb.heap, filhoDir);
+	else if (verificarMenorHm(hb.heap, filhoDir)) {
+		trocarHmMenor(hb.heap, filhoDir);
 		return removerHm(hb, false, filhoDir);
 	}
 }
@@ -81,6 +108,33 @@ void atualizarPeloDado(HB &hb, Dado valor) {
 	{
 		if (hb.heap[i].dado == valor.dado) {
 			hb.heap[i].chave == valor.chave;
+
+			int f = i;
+			while(f > 0 && f < hb.qtd)
+			{
+				if (verificarMenorHm(hb.heap, f)) {
+					trocarHmMenor(hb.heap, f);
+					int pai = (f - 1) / 2;
+					f = pai;
+				}
+				else if (verificarMaiorHm(hb.heap, f)) {
+					int filhoEsq = (2 * f) + 1;
+					int filhoDir = (2 * f) + 2;
+					
+					if (hb.heap[filhoEsq].chave < hb.heap[filhoDir].chave) {
+						trocarHmMaior(hb.heap, f, filhoEsq);
+						f = filhoEsq;
+					}
+					else {
+						trocarHmMaior(hb.heap, f, filhoDir);
+						f = filhoDir;
+					}
+				}
+				else {
+					f = 0;
+					i = 1000;
+				}
+			}
 		}
 		if (hb.heap[i].chave == NULL) {
 			i = 1000;
