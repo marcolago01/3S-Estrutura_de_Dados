@@ -60,4 +60,18 @@ int qtdRegNivelK(Pagina *raiz, int k,int nivel = 0) {
 	return cont;
 }
 
+int q5(Pagina *p) {
+	if(p == NULL) {
+		return 0;
+	}
+	int cont = 0;
+	if (p->filhos[0] != NULL) {
+		cont += p->p->registros;
+		for (int i = 0; i < p->registros + 1; i++) {
+			cont += q5(p->filhos[i]);
+		}
+	}
+	return cont;
+}
+
 #endif
