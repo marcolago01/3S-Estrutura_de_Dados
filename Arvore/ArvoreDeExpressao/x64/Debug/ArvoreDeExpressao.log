@@ -1,1 +1,6 @@
-﻿  ArvoreDeExpressao.vcxproj -> C:\Users\marco.lago\source\repos\3S-Estrutura_de_Dados\Arvore\x64\Debug\ArvoreDeExpressao.exe
+﻿  stdafx.cpp
+  ArvoreDeExpressao.cpp
+c:\users\marco.lago\source\repos\3s-estrutura_de_dados\arvore\arvoredeexpressao\arvoreexpressao.h(51): warning C4267: 'inicializando': conversão de 'size_t' para 'int', possível perda de dados
+c:\users\marco.lago\source\repos\3s-estrutura_de_dados\arvore\arvoredeexpressao\arvoreexpressao.h(79): warning C4267: '=': conversão de 'size_t' para 'int', possível perda de dados
+c:\users\marco.lago\source\repos\3s-estrutura_de_dados\arvore\arvoredeexpressao\arvoreexpressao.h(146): warning C4715: 'executarAExp': nem todos os caminhos de controle retornam um valor
+  ArvoreDeExpressao.vcxproj -> C:\Users\marco.lago\source\repos\3S-Estrutura_de_Dados\Arvore\x64\Debug\ArvoreDeExpressao.exe

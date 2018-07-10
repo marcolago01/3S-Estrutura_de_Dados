@@ -56,16 +56,24 @@ void montarAExp(AExpNodo *&nodo) {
 	else {
 
 		int parenteses = 0;
+		bool chaves = true;
 
 		for (int i = 0; i < tamanhoExpressao; i++)
 		{
 			if (nodo->expressao[i] == '(') {
 				parenteses++;
 			}
+			if (nodo->expressao[i] == ')'){
+				parenteses--;
+				if (parenteses == 0 && i != tamanhoExpressao-1) {
+					chaves = false;
+				}
+			}
+			
 		}
 
 		if ((nodo->expressao[0] == '(' && nodo->expressao[tamanhoExpressao - 1] == ')')
-			&& parenteses == 1) {
+			&& chaves) {
 
 			nodo->expressao = nodo->expressao.substr(1, tamanhoExpressao - 2);
 			tamanhoExpressao = nodo->expressao.length();
